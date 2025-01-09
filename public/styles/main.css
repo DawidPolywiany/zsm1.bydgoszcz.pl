@@ -1,0 +1,73 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    overflow-x: hidden; /* Чтобы не было горизонтальной прокрутки */
+}
+/* ---------- */
+
+/* верхняя панель */
+header {
+    position: fixed;
+    width: 100%;
+    background-color: #242525;
+}
+/* верхняя часть панели */
+header .top-menu {
+    display: flex;
+}
+header .top-menu img {
+    height: 35px;
+    margin: 10px;
+}
+header .top-menu svg {
+    height: 35px;
+    width: 35px;
+    margin: 10px;
+    fill: #6E95B5;
+}
+header .top-menu div {
+    margin-left: auto;
+}
+/* нижняя часть панели */
+header .bottom-menu {
+    display: flex;
+}
+header .bottom-menu svg {
+    height: 45px;
+    width: 45px;
+    margin: 5px 10px;
+    margin-bottom: 15px;
+    fill: #CBC4BA;
+}
+/* ---------- */
+
+/* Содержимое */
+main {
+    position: relative;
+    top: 125px;
+    height: 250px;
+    background-color: #282828;
+}
+/* ---------- */
+
+/* Нижнее меню */
+footer {
+    position: relative;
+    top: 125px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #393C3C;
+    padding-top: 5px;
+}
+footer * {
+    text-decoration: none;
+    font-size: 15px;
+    color: #CBC4BA;
+}
+footer a svg {
+    width: 15px;
+    height: 15px;
+    fill: #CBC4BA;
+}
+/* ---------- */
