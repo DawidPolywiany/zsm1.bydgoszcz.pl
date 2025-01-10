@@ -13,7 +13,8 @@ const _svg = {
     plan: get_icon('plan.svg'),
     vulcan: get_icon('vulcan.svg'),
     wheelchair: get_icon('wheelchair.svg'),
-    cookie: get_icon('cookie.svg')
+    cookie: get_icon('cookie.svg'),
+    exit: get_icon('exit.svg')
 }
 
 exports.index = (req, res) => {

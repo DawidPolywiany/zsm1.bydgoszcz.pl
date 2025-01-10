@@ -3,6 +3,9 @@ body {
     font-family: Arial, sans-serif;
     overflow-x: hidden; /* Чтобы не было горизонтальной прокрутки */
 }
+a {
+    text-decoration: none;
+}
 /* ---------- */
 
 /* верхняя панель */
@@ -10,6 +13,7 @@ header {
     position: fixed;
     width: 100%;
     background-color: #242525;
+    z-index: 1000;
 }
 /* верхняя часть панели */
 header .top-menu {
@@ -26,7 +30,23 @@ header .top-menu svg {
     fill: #6E95B5;
 }
 header .top-menu div {
+    position: relative;
     margin-left: auto;
+    right: 3px;
+}
+/* Кнопка меню */
+header .top-menu .menu-button {
+    padding: 0;
+    background-color: transparent;
+    border: none;
+}
+header .top-menu .menu-button div {
+    z-index: 1000;
+    background-color: #242525;
+    pointer-events: none;
+}
+header .top-menu .menu-button .menu-closed {
+    top: -60px;
 }
 /* нижняя часть панели */
 header .bottom-menu {
@@ -39,13 +59,41 @@ header .bottom-menu svg {
     margin-bottom: 15px;
     fill: #CBC4BA;
 }
+/* боковое меню */
+header nav {
+    display: flex;
+    flex-direction: column;
+    padding: 10px 20px;
+}
+header nav svg {
+    position: fixed;
+    top: 0;
+    right: 5px;
+    height: 35px;
+    width: 35px;
+    margin: 10px;
+    fill: #6E95B5;
+}
+header .nav-closed {
+    position: relative;
+    height: 0;
+    overflow: hidden;
+}
+header nav details li {
+    list-style-type: none;
+    padding: 10px 0;
+}
+header nav details, a {
+    padding: 10px 0;
+    color: #9EA8B0;
+}
 /* ---------- */
 
 /* Содержимое */
 main {
     position: relative;
     top: 125px;
-    height: 250px;
+    min-height: 65vh;
     background-color: #282828;
 }
 /* ---------- */
@@ -61,7 +109,6 @@ footer {
     padding-top: 5px;
 }
 footer * {
-    text-decoration: none;
     font-size: 15px;
     color: #CBC4BA;
 }
