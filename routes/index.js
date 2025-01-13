@@ -1,7 +1,10 @@
 const express = require('express');
 const route = express.Router();
-const _controller = require('../controllers/controller')
 
-route.get('/', _controller.index);
+route.get('/', (req, res) => {
+    res.render('index', {
+        svg: req.svg
+    });
+});
 
 module.exports = route;
