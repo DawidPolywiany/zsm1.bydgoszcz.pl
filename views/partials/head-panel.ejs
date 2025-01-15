@@ -15,21 +15,19 @@
 </div>
 <nav id="nav_menu" class="nav-closed">
     <%- svg.exit %>
-    <details>
-        <summary>Szkoła</summary>
-        <ul>
-            <li><a href="#link1">Dyrekcja szkoły</a></li>
-            <li><a href="#link2">Organizacja roku szkolnego</a></li>
-            <li><a href="#link3">Dokumenty szkoły</a></li>
-            <li><a href="#link3">Standardy ochrony małoletnich</a></li>
-            <li><a href="#link3">Dyżury nauczycieli</a></li>
-            <li><a href="#link3">Zamówienia publiczne</a></li>
-            <li><a href="#link3">Pedagog i psycholog</a></li>
-            <li><a href="#link3">Doradca zawodowy</a></li>
-            <li><a href="#link3">Informacje dla emerytów</a></li>
-            <li><a href="#link3">Rada rodziców</a></li>
-            <li><a href="#link3">75 Bydgoska Drużyna</a></li>
-        </ul>
-    </details>
-    <a href="#link1">Uczeń</a>
+    
+    <% data.nav.forEach((i) => { %>
+        <% if (Array.isArray(i.links)) { %>
+            <details>
+                <summary><%= i.title %></summary>
+                <ul>
+                <% i.links.forEach((j) => { %>
+                    <li><a href="<%= j.link %>"><%= j.title %></a></li>
+                <% }) %>
+                </ul>
+            </details>
+        <% } else { %>
+            <a href="<%= i.links %>"><%= i.title %></a>
+        <% } %>
+    <% }); %>
 </nav>
