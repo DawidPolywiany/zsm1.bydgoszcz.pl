@@ -11,6 +11,7 @@ a {
 /* верхняя панель */
 header {
     position: fixed;
+    top: 0;
     width: 100%;
     background-color: #242525;
     z-index: 1000;
@@ -59,11 +60,14 @@ header .bottom-menu svg {
     margin-bottom: 15px;
     fill: #CBC4BA;
 }
+/* ---------- */
+
 /* боковое меню */
 header nav {
     display: flex;
     flex-direction: column;
-    padding: 10px 20px;
+    padding: 0 20px;
+    padding-bottom: 15px;
 }
 header nav svg {
     position: fixed;
@@ -77,6 +81,7 @@ header nav svg {
 header .nav-closed {
     position: relative;
     height: 0;
+    padding-bottom: 0;
     overflow: hidden;
 }
 header nav details li {
@@ -92,16 +97,56 @@ header nav details, a {
 /* Содержимое */
 main {
     position: relative;
-    top: 125px;
-    min-height: 65vh;
+    top: 105px;
+    min-height: 70vh;
     background-color: #282828;
+    padding: 15px 20px;
+    color: #CBC4BA;
+}
+/* Index */
+main.index .links {
+    padding-top: 15px;
+    display: flex;
+    flex-wrap: wrap;
+}
+main.index .links div {
+    height: 145px;
+    background-color: #242525;
+    padding: 10px;
+    margin: 10px 5px;
+    text-align: center;
+}
+main.index .articles div {
+    width: 90%;
+    border: 1px solid #CBC4BA;
+    border-radius: 5px;
+    background-color: #242525;
+    margin-top: 15px;
+    padding: 20px;
+}
+main.index .articles a {
+    color: #70B3E6;
+}
+main.index .articles button {
+    color: #70B3E6;
+    border: 1px solid #70B3E6;
+    border-radius: 5px;
+    background-color: transparent;
+    padding: 3px 10px;
+}
+main.index div img {
+    height: 100%;
+}
+/* Info */
+main.info * {
+    margin: 30px 0;
 }
 /* ---------- */
 
 /* Нижнее меню */
 footer {
     position: relative;
-    top: 125px;
+    top: 105px;
     display: flex;
     flex-direction: column;
     align-items: center;

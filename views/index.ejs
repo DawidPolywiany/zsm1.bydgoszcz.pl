@@ -2,14 +2,33 @@
 <html>
     <head>
         <!-- заголовки -->
-        <%- include('./partials/head', {description: 'описание', keywords: 'ключивые, слова', title: 'название'}) %>
+        <%- include('./partials/head') %>
     </head>
     <body>
         <header>
             <!-- верхняя панель -->
             <%- include('./partials/head-panel') %>
         </header>
-        <main></main>
+        <main class="index">
+            <!-- Верхняя часть -->
+            <div class="links">
+            <% links.forEach((i) => { %>
+                <div>
+                    <a href="<%= i.link %>"><img src="/images/links/<%= i.image %>"></a>
+                </div>
+            <% }); %>
+            </div>
+            <!-- Нижняя часть -->
+            <div class="articles">
+            <% articles.forEach((i) => { %>
+                <div>
+                    <a href="/info?id=<%- i._id.toString() %>"><h3><%= i.name %></h3></a>
+                    <p><%- i.content[0].slice(0, 150) %>...</p>
+                    <button onclick="window.location.href='/info?id=<%- i._id.toString() %>'">Czytaj całość</button>
+                </div>
+            <% }); %>
+            </div>
+        </main>
         <footer>
             <!-- нижняя панель -->
             <%- include('./partials/footer.ejs') %>

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <!-- заголовки -->
+        <%- include('./partials/head') %>
+    </head>
+    <body>
+        <header>
+            <!-- верхняя панель -->
+            <%- include('./partials/head-panel') %>
+        </header>
+        <main class="info">
+            <h2><%= name %></h2>
+            <% content.forEach((i) => { %>
+                <p><%- i %></p>
+            <% }); %>
+        </main>
+        <footer>
+            <!-- нижняя панель -->
+            <%- include('./partials/footer.ejs') %>
+        </footer>
+    </body>
+</html>

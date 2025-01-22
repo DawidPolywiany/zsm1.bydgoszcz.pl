@@ -12,6 +12,7 @@ _app.use(express.static('public'));
 
 //Подключаем маршруты
 const _index_route = require('./routes/index');
+const _info_route = require('./routes/info');
 
 //Получаем все svg иконки
 const _svg = {
@@ -43,7 +44,8 @@ const _svg = {
         });
         
         //Используем маршруты
-        _app.use('/', _index_route); //Главная страница
+        _app.use('/', _index_route);
+        _app.use('/info', _info_route);
         
         //Запуск сервера
         _app.listen(PORT, () => {
