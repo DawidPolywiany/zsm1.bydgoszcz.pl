@@ -13,7 +13,17 @@ route.get('/', async (req, res) => {
     const _articles = await _home.findOne({_name: "articles"});
     let _articles_list = [];
     for(const i of _articles.articles) {
-        _articles_list.push(await _info.findOne({_id: new ObjectId(i)}));
+        let _get;
+        try {
+            _get = await _info.findOne({_id: new ObjectId(i)});
+        } catch {
+            _get = {
+                name: "404",
+                tags: "",
+                content: ["Page not found"]
+            }
+        }
+        _articles_list.push(_get);
     }
     
     res.render('index', Object.assign({},

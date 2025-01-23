@@ -11,7 +11,21 @@ route.get('/', async (req, res) => {
     
     //Получаем дату
     const _nav = await _home.findOne({_name: "header"});
-    const _data = await _info.findOne({_id: new ObjectId(_id)});
+    let _data;
+    try {
+        _data = await _info.findOne({_id: new ObjectId(_id)});
+    } catch {
+        res.render('not-found', Object.assign({},
+            {meta: {
+                description: "",
+                keywords: "",
+                title: "This page doesn't seem to exist."
+            }},
+            {svg: req.svg},
+            _nav
+        ));
+        return;
+    }
     
     res.render('info', Object.assign({},
         {meta: {

@@ -117,7 +117,6 @@ main.index .links div {
     text-align: center;
 }
 main.index .articles div {
-    width: 90%;
     border: 1px solid #CBC4BA;
     border-radius: 5px;
     background-color: #242525;
