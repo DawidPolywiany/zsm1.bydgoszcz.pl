@@ -140,6 +140,10 @@ main.index div img {
 main.info * {
     margin: 30px 0;
 }
+/* Error */
+main.err {
+    text-align: center;
+}
 /* ---------- */
 
 /* Нижнее меню */
